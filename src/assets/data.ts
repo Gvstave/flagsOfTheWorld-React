@@ -1,5 +1,5 @@
 // Define your simplified structure
-type CountryData = {
+type CountryDataStructure = {
   flags: string[];
   name: string;
   population: number;
@@ -16832,7 +16832,7 @@ const countries = [
   }
 ];
 
-export const simplifiedCountries: CountryData[] = countries.map(country => ({
+export const simplifiedCountries: CountryDataStructure[] = countries.map(country => ({
   name: country.name,
   population: country.population,
   region: country.region,

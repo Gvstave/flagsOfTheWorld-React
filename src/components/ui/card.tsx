@@ -1,12 +1,13 @@
 import "../../index.css"
 
 type CountryData = {
-    name: string;
-    population: number;
-    region: string;
-    capital: string;
-    flags: string[];
+  flags: string[];
+  name: string;
+  population: number;
+  region: string;
+  capital?: string;
 };
+
 
 const Card = ({ Country }: { Country: CountryData }) => {
     return (

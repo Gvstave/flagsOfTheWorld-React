@@ -1,12 +1,13 @@
+// Define your simplified structure
 type CountryData = {
   flags: string[];
   name: string;
   population: number;
   region: string;
-  capital: string;
-}
+  capital?: string;
+};
 
-const countries: CountryData[] = [
+const countries = [
   {
     "name": "Afghanistan",
     "topLevelDomain": [".af"],
@@ -16829,12 +16830,12 @@ const countries: CountryData[] = [
     "cioc": "ZIM",
     "independent": true
   }
-]
+];
 
 export const simplifiedCountries: CountryData[] = countries.map(country => ({
   name: country.name,
   population: country.population,
   region: country.region,
-  capital: country.capital,
-  flags: [country.flags.svg, country.flags.png]
+  capital: country.capital ?? "No capital city",
+  flags: [country.flags.svg]
 }));

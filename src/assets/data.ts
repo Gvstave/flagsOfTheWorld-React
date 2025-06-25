@@ -1,4 +1,3 @@
-// Define your simplified structure
 type CountryDataStructure = {
   flags: string[];
   name: string;

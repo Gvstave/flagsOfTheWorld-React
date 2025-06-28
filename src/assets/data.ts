@@ -1,4 +1,4 @@
-type CountryDataStructure = {
+export type CountryDataStructure = {
   flags: string[];
   name: string;
   population: number;
@@ -6,7 +6,7 @@ type CountryDataStructure = {
   capital?: string;
 };
 
-const countries = [
+export const countries = [
   {
     "name": "Afghanistan",
     "topLevelDomain": [".af"],
@@ -16831,10 +16831,3 @@ const countries = [
   }
 ];
 
-export const simplifiedCountries: CountryDataStructure[] = countries.map(country => ({
-  name: country.name,
-  population: country.population,
-  region: country.region,
-  capital: country.capital ?? "No capital city",
-  flags: [country.flags.svg]
-}));

@@ -1,35 +1,40 @@
-import { Filter } from 'lucide-react'
-import '../../index.css'
-import { useState } from 'react';
+import { Filter } from "lucide-react";
+import { useState } from "react";
+import "../../index.css";
 
-function Sort() {
+type SortProps = {
+    selected: string;
+    onSelect: (region: string) => void;
+};
+
+function Sort({ onSelect }: SortProps) {
     const [showContent, setShowContent] = useState(false);
 
     const toggleContent = () => {
-        setShowContent(prev => !prev)
-    }
+        setShowContent((prev) => !prev);
+    };
+
+    const regions = ["all", "Africa", "Europe", "Asia", "Americas", "Oceania", "Polar", "Antarctica"];
 
     return (
-        <section className='sort'>
-            <Filter onClick={toggleContent} className='sort-button' />
-            {
-                showContent && (
-                    <div>
-                        <ul>
-                            <li>All</li>
-                            <li>Africa</li>
-                            <li>Europe</li>
-                            <li>Asia</li>
-                            <li>Americas</li>
-                            <li>Oceania</li>
-                            <li>Polar</li>
-                            <li>Antarctica</li>
-                        </ul>
-                    </div>
-                )
-            }
+        <section className="sort">
+            <Filter onClick={toggleContent} className="sort-button" />
+            {showContent && (
+                <div>
+                    <ul>
+                        {regions.map((region) => (
+                            <li key={region} onClick={() => {
+                                onSelect(region)
+                                toggleContent()
+                            }}>
+                                {region}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </section>
-    )
+    );
 }
 
 export default Sort;

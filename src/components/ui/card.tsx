@@ -1,19 +1,12 @@
 import "../../index.css"
-
-type CountryData = {
-  flags: string[];
-  name: string;
-  population: number;
-  region: string;
-  capital?: string;
-};
+import type { CountryData } from "../../utils/countryData";
 
 
 const Card = ({ Country }: { Country: CountryData }) => {
     return (
         <a className="card">
             <section>
-                <img src={Country.flags[0]} alt={Country.name} />
+                <img src={Country.flags.svg} alt={Country.name} />
                 <h4>{Country.name}</h4>
                 <p><strong>Population: </strong>{Country.capital}</p>
                 <p><strong>Region: </strong>{Country.region}</p>

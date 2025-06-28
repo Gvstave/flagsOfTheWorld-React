@@ -1,4 +1,4 @@
-import type { CountryDataStructure } from "../assets/data";
+import type { CountryDataStructure } from "./CountryDataStructure";
 import { countries } from "../assets/data";
 
 const simplifiedCountries: CountryDataStructure[] = countries.map(country => ({
